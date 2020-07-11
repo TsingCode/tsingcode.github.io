@@ -1,11 +1,148 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>Tsing Page</title>
+	<title>Browser HomePage</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" charset="UTF-8">
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+			font-family:"Roboto Slab","ff-tisa-web-pro","Georgia","Helvetica Neue",Helvetica,Arial,sans-serif;
+		}
+		body{
+			text-align:center;
+			width:100%;
+			font-size:18px;
+			color: #ffffff;
+			background-color: #1a1a1a;
+		}
+		.container{
+			width: 100%;
+			max-width: 400px;
+			padding: 20px 0; 
+			margin: 0 auto;
+		}
+		.bg_img{
+			position: fixed; 
+			width: 100%;
+			height: 100%; 
+			z-index: -99;
+			display: block;
+			margin: 0 auto;
+			object-fit: cover;
+			object-position: left bottom; /* https://developer.mozilla.org/zh-CN/docs/Web/CSS/object-position */
+			filter: opacity(0.9);
+			left: 50%;
+			bottom: 0;
+			transform: translate(-50%,0);
+		}
+		h2{
+			transform:scale(1,1.4);
+			margin: 60px 0;
+			font-size: 28px;
+		}
+		input{
+			color: #ffffff;
+			text-shadow: 1px 1px 4px #888888;
+			width: 320px;
+			height: 40px;
+			padding: 4px;
+			border: none;
+			outline: none;
+			font-size: 16px;
+			background-color: rgba(255,255,255,0.3);
+			border-radius: 100px;
+			padding: 0 20px;
+			box-sizing:border-box; /* 防止 padding 撑大尺寸*/
+		}
+		.link_container{
+			width: 320px;
+			margin: 30px auto 0;
+			text-align: left;
+		}
+		.link_container .box{
+			width: 80px;
+			height: 80px;
+			text-align: center;
+			float: left;
+			margin-top: 15px;
+			display: block;
+			color: #ffffff;
+			text-decoration: none;
+			-webkit-tap-highlight-color: rgba(255, 255, 255, 0.1); /* 取消a标签在移动端点击时的蓝色:https://blog.csdn.net/weixin_41076513/article/details/79804722 */
+		}
+		.box .circle{
+			width: 45px;
+			height: 45px;
+			line-height: 45px;
+			margin-top: 5px;
+			font-size: 20px;
+			border-radius: 45px;
+			background-color: rgba(255,255,255,0.3);
+			display: inline-block;
+		}
+		.box .text{
+			font-size: 10px;
+			color: #ffffff;
+			margin-top: 6px;
+		}
+	</style>
 </head>
 <body>
-<h1>Welcome to Tsing's Homepage</h1>
-Love Coding, Love Life.
+	<img src="./bg.jpg" class="bg_img" />
+	<!-- <img src="https://i.loli.net/2020/06/26/G4p6yasRhTIzV8d.jpg" class="bg_img" /> -->
+	<div class="container">
+		<h2>GETTING RICHER</h2>
+		<form action="https://www.baidu.com/s" target="_blank">
+			<input type="text" name="wd" autofocus="autofocus">
+		</form>
+		<div class="link_container">
+			<a href="http://192.168.170.6" target="_blank" class="box">
+				<div class="circle">网</div>
+				<div class="text">网络通</div>
+			</a>
+			<a href="https://dogedoge.com" target="_blank" class="box">
+				<div class="circle">搜</div>
+				<div class="text">多吉搜索</div>
+			</a>
+			<a href="http://121.36.8.126:8888/google" target="_blank" class="box">
+				<div class="circle">谷</div>
+				<div class="text">谷歌镜像</div>
+			</a>
+			<a href="https://yandex.com" target="_blank" class="box">
+				<div class="circle">Y</div>
+				<div class="text">Yandex</div>
+			</a>
+			<a href="http://email.ustc.edu.cn" target="_blank" class="box">
+				<div class="circle">邮</div>
+				<div class="text">USTC邮箱</div>
+			</a>
+			<a href="https://github.com" target="_blank" class="box">
+				<div class="circle">G</div>
+				<div class="text">GitHub</div>
+			</a>
+			<a href="https://club.huawei.com/forumall-1.html" target="_blank" class="box">
+				<div class="circle">花</div>
+				<div class="text">花粉俱乐部</div>
+			</a>
+			<a href="https://www.52pojie.cn" target="_blank" class="box">
+				<div class="circle">吾</div>
+				<div class="text">吾爱破解</div>
+			</a>
+			<a href="https://note.ms/tsing" target="_blank" class="box">
+				<div class="circle">N</div>
+				<div class="text">Note.ms</div>
+			</a>
+			<a href="https://www.v2ex.com" target="_blank" class="box">
+				<div class="circle">V</div>
+				<div class="text">V2EX</div>
+			</a>
+			<a href="https://sci-hub.tw" target="_blank" class="box">
+				<div class="circle">S</div>
+				<div class="text">SciHub</div>
+			</a>
+		</div>
+		
+	</div>
 </body>
 </html>
