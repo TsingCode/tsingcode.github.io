@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Browser HomePage</title>
+	<title>浏览器主页</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" charset="UTF-8">
 	<style type="text/css">
 		*{
@@ -31,7 +31,7 @@
 			margin: 0 auto;
 			object-fit: cover;
 			object-position: left bottom; /* https://developer.mozilla.org/zh-CN/docs/Web/CSS/object-position */
-			filter: opacity(0.9);
+			filter: opacity(0.8);
 			left: 50%;
 			bottom: 0;
 			transform: translate(-50%,0);
@@ -55,12 +55,12 @@
 			padding: 0 20px;
 			box-sizing:border-box; /* 防止 padding 撑大尺寸*/
 		}
-		.link_container{
+		#link_container{
 			width: 320px;
 			margin: 30px auto 0;
 			text-align: left;
 		}
-		.link_container .box{
+		#link_container .box{
 			width: 80px;
 			height: 80px;
 			text-align: center;
@@ -87,6 +87,7 @@
 			margin-top: 6px;
 		}
 	</style>
+	<script type='text/javascript' src='./data.js'></script> <!-- 利用.js文件格式导入json数据，参考：https://www.zhihu.com/question/35381334/answer/156432852 -->
 </head>
 <body>
 	<!-- <img src="./bg.jpg" class="bg_img" /> -->
@@ -96,53 +97,17 @@
 		<form action="https://www.baidu.com/s" target="_blank">
 			<input type="text" name="wd" autofocus="autofocus">
 		</form>
-		<div class="link_container">
-			<a href="http://192.168.170.6" target="_blank" class="box">
-				<div class="circle">网</div>
-				<div class="text">网络通</div>
-			</a>
-			<a href="https://dogedoge.com" target="_blank" class="box">
-				<div class="circle">搜</div>
-				<div class="text">多吉搜索</div>
-			</a>
-			<a href="http://121.36.8.126:8888/google" target="_blank" class="box">
-				<div class="circle">谷</div>
-				<div class="text">谷歌镜像</div>
-			</a>
-			<a href="https://yandex.com" target="_blank" class="box">
-				<div class="circle">Y</div>
-				<div class="text">Yandex</div>
-			</a>
-			<a href="http://email.ustc.edu.cn" target="_blank" class="box">
-				<div class="circle">邮</div>
-				<div class="text">USTC邮箱</div>
-			</a>
-			<a href="https://github.com" target="_blank" class="box">
-				<div class="circle">G</div>
-				<div class="text">GitHub</div>
-			</a>
-			<a href="https://club.huawei.com/forumall-1.html" target="_blank" class="box">
-				<div class="circle">花</div>
-				<div class="text">花粉俱乐部</div>
-			</a>
-			<a href="https://www.52pojie.cn" target="_blank" class="box">
-				<div class="circle">吾</div>
-				<div class="text">吾爱破解</div>
-			</a>
-			<a href="https://note.ms/tsing" target="_blank" class="box">
-				<div class="circle">N</div>
-				<div class="text">Note.ms</div>
-			</a>
-			<a href="https://www.v2ex.com" target="_blank" class="box">
-				<div class="circle">V</div>
-				<div class="text">V2EX</div>
-			</a>
-			<a href="https://sci-hub.tw" target="_blank" class="box">
-				<div class="circle">S</div>
-				<div class="text">SciHub</div>
-			</a>
-		</div>
+		<div id="link_container"></div>
 		
 	</div>
+	<script type="text/javascript">
+		var div = document.getElementById("link_container");
+		for(let i=0; i<my_json.length; i++){
+			console.log(my_json[i]["website_name"], my_json[i]["website_link"], my_json[i]["website_single_text"]);
+			var link_tag = document.createElement("div");
+			link_tag.innerHTML = '<a href="' + my_json[i]["website_link"] + '" target="_blank" class="box"><div class="circle">' + my_json[i]["website_single_text"] + '</div>	<div class="text">' + my_json[i]["website_name"] + '</div></a>';
+			div.append(link_tag);
+		}
+	</script>
 </body>
 </html>
